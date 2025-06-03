@@ -1,0 +1,634 @@
+@font-face {
+  font-family: "Gasoek One";
+  font-weight: 400;
+  src: url("assets/fonts/gasoekone-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Blaka";
+  font-weight: 400;
+  src: url("assets/fonts/blaka-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 500;
+  src: url("assets/fonts/jetbrainsmono-medium.woff") format("woff");
+}
+
+:root {
+  /* Colors */
+  --color-bg: #262626;
+  --color-text-dark-bg: #cfcdd9;
+  --color-text-light-bg: #222222;
+  --color-accent: #83ffc7;
+
+  /* Font Families */
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+    sans-serif;
+  --font-inter: "Inter", var(--font-system);
+  --font-jetbrains-mono: "JetBrains Mono", var(--font-system);
+  --font-blaka: "Blaka", var(--font-system);
+  --font-gasoek: "Gasoek One", var(--font-system);
+}
+
+/* Remove some default styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* Generic widely applied styles */
+
+html {
+  background-image: url(assets/images/512x512_Dissolve_Noise_Texture.png);
+  background-color: var(--color-bg);
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  background-blend-mode: multiply;
+}
+
+body {
+  font-family: var(--font-inter);
+  font-size: 1.06rem;
+  line-height: 2.3rem;
+  color: var(--color-text-dark-bg);
+  font-weight: 500;
+}
+
+h1,
+h2 {
+  font-family: var(--font-gasoek);
+  color: #ffffff;
+  font-weight: 400; /* h1 is bold by default, but Gasoek One font should be rendered as regular */
+  font-size: 4.45rem;
+  line-height: 4.5rem;
+  margin-block-end: 1em;
+}
+
+p,
+a {
+  margin-block-end: 2em;
+}
+
+.highlight--light {
+  color: #ffffff;
+}
+
+/* Hero section styles */
+
+.hero {
+  height: 100svh;
+  width: 685px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  background-color: #ffffff;
+  position: absolute;
+  width: 100vw;
+  height: 96svh;
+  bottom: 1rem;
+  left: 0;
+  z-index: -1;
+  opacity: 30%;
+  background: linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(0 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 100% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(1 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 98% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(2 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 77% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(3 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 70% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(4 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 48% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(5 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 40% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(6 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 22% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(7 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 20% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(8 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 15% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(9 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 10% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(10 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 10% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(11 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 10% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(12 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 9% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(13 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 8% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(14 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 8% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(15 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 8% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(16 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 8% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(17 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 8% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(18 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 7% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(19 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 7% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(20 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 7% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(21 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 7% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(22 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 6% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(23 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 6% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(24 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 6% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(25 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 6% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(26 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 5% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(27 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 5% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(28 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 5% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(29 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 4% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(30 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 4% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(31 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 4% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(32 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 4% no-repeat,
+    linear-gradient(
+        to bottom,
+        rgba(153, 153, 153, 1) 0%,
+        rgba(220, 220, 220, 0.3) 35%,
+        rgba(220, 220, 220, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      calc(33 * (100% / 34) + 1%) bottom / calc(100% / 34 - 1%) 4% no-repeat,
+    #1a1a1a;
+}
+
+.hero__top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3.5rem;
+  margin-bottom: auto;
+  align-items: center;
+}
+
+.hero__top-bar * {
+  margin-block-end: 0;
+}
+
+.top-bar__brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.top-bar__logo {
+  color: var(--color-accent);
+  font-family: var(--font-blaka);
+  font-size: 50px;
+  line-height: 0;
+  top: 13px;
+}
+
+.top-bar__company-name {
+  color: #ffffff;
+  font-family: var(--font-jetbrains-mono);
+  margin-left: 0.5rem;
+}
+
+.top-bar__statement {
+  margin-inline: 2rem;
+  text-align: center;
+}
+
+.top-bar__contact {
+  color: var(--color-accent);
+}
+
+.hero__content {
+  margin-bottom: auto;
+}
+
+/* Problem section styles */
+
+.problem {
+  color: var(--color-text-light-bg);
+  height: 100svh;
+  width: 90vw;
+  margin-left: auto;
+  display: grid;
+  gap: 1px;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-areas:
+    "a a a a a a b b c c c c d d"
+    "a a a a a a b b c c c c d d"
+    "a a a a a a b b c c c c d d"
+    "a a a a a a b b c c c c d d"
+    "a a a a a a e e f f f f g g"
+    "h h h h h h h h h h h h i i"
+    "h h h h h h h h h h h h i i"
+    "h h h h h h h h h h h h i i"
+    "j j j j j j j j j j j j j j";
+  background: #539075;
+}
+
+.problem__area {
+  display: flex;
+  background: var(--color-accent);
+}
+
+.problem__area--a {
+  grid-area: a;
+  align-items: end;
+  padding: 2rem;
+}
+
+.problem__area--b {
+  grid-area: b;
+  padding-block: 4rem;
+}
+
+.problem__area--c {
+  grid-area: c;
+  padding-block: 4rem;
+}
+
+.problem__area--d {
+  grid-area: d;
+}
+
+.problem__area--e {
+  grid-area: e;
+}
+
+.problem__area--f {
+  grid-area: f;
+}
+
+.problem__area--g {
+  grid-area: g;
+}
+
+.problem__area--h {
+  grid-area: h;
+  align-items: center;
+  padding: 2rem;
+}
+
+.problem__area--i {
+  grid-area: i;
+}
+
+.problem__area--j {
+  grid-area: j;
+}
+
+.problem__heading {
+  color: var(--color-text-light-bg);
+  margin-block-end: 0;
+}
+
+/* Business section */
+
+.business {
+  display: flex;
+  flex-direction: row;
+  height: 100svh;
+  padding-inline: 10vw;
+  padding-block: 3rem;
+  position: relative;
+  gap: 6rem;
+}
+
+.business__container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.business__container--justify {
+  justify-content: end;
+}
+
+.business__heading {
+  max-width: 60%;
+}
+
+.business__contact {
+  margin-top: auto;
+  align-self: flex-end;
+  border-block-end: solid;
+  line-height: 1.5rem;
+  border-block-end-color: var(--color-accent);
+  color: var(--color-accent);
+  border-block-end-width: 3px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.business::after {
+  content: "";
+  position: absolute;
+  background-position: bottom 50px right 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 62vw;
+  height: 85%;
+  bottom: 0;
+  right: 0;
+  background-image: url(assets/images/graph.png);
+  z-index: -1;
+}
+
+/* Quality section */
+
+.quality {
+  display: flex;
+  flex-direction: row;
+  height: 100svh;
+  padding-inline: 10vw;
+  position: relative;
+  gap: 0.5%;
+  padding-bottom: 2rem;
+}
+
+.quality__intro {
+  display: flex;
+  flex-direction: column;
+  flex: 6;
+}
+
+.quality__heading {
+  color: #4d4d4d;
+  filter: blur(2.5px);
+  display: flex;
+  margin-top: 1em;
+  font-size: 6.5rem;
+  line-height: 6.5rem;
+}
+
+.quality__tagline {
+  margin-top: auto;
+}
+
+.quality__value {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  margin-bottom: 6rem;
+}
+
+.quality__subheading {
+  display: flex;
+  width: 14rem;
+  height: 14rem;
+  position: absolute;
+  white-space: nowrap;
+  font-family: var(--font-gasoek);
+  font-weight: 400; /* h2 is bold by default, but Gasoek One font should be rendered as regular */
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: #4d4d4d;
+  filter: blur(2.5px);
+  margin-block-end: 0;
+  left: 105%;
+}
+
+.quality__image {
+  width: 14rem;
+  height: 14rem;
+  display: flex;
+}
+
+.quality__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 7;
+}
