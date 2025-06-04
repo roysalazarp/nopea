@@ -548,13 +548,14 @@ strong {
 
 #business-section {
   height: 100svh;
-  padding-inline: 12vw;
+  padding-inline: 8vw;
   padding-block: 3rem;
   position: relative;
-  gap: 4rem;
+  gap: 6rem;
 }
 
 #business-section h1 {
+  max-width: 60%;
   font-size: clamp(2.9rem, 7vw, 4.45rem);
   line-height: clamp(2.9rem, 7vw, 4.5rem);
 }
@@ -602,6 +603,53 @@ strong {
   gap: 0.5rem;
 }
 
+#quality-section {
+  height: 100svh;
+  padding-inline: 8vw;
+  padding-block: 3rem;
+  position: relative;
+  gap: 2rem;
+}
+
+#quality-section div:nth-child(1) {
+  flex: 5;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  display: flex;
+}
+
+#quality-section div:nth-child(2) {
+  display: none;
+  max-width: 16rem;
+  /* flex: 2; */
+}
+
+#quality-section div:nth-child(3) {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#quality-section h1 {
+  color: #4d4d4d;
+  filter: blur(2.5px);
+  display: flex;
+  margin-top: auto;
+  font-size: clamp(4rem, 8vw, 6rem);
+  line-height: clamp(4rem, 8vw, 5.5rem);
+}
+
+#quality-section h2 {
+  display: none;
+  font-family: var(--font-gasoek);
+  font-weight: 400; /* h2 is bold by default, but Gasoek One font should be rendered as regular */
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: clamp(2rem, 5vw, 3.5rem);
+  color: #4d4d4d;
+  filter: blur(2.5px);
+}
+
 @media screen and (min-width: 956px) {
   #the-problem-section {
     grid-template-areas:
@@ -615,7 +663,7 @@ strong {
       "h h h h h h h h h h h h i i"
       "j j j j j j j j j j j j j j";
 
-    width: 88vw;
+    width: 92vw;
   }
   .a,
   .b,
@@ -636,6 +684,19 @@ strong {
   }
 
   #business-section::after {
+    display: block;
+  }
+
+  #quality-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #quality-section div:nth-child(2) {
+    display: block;
+  }
+
+  #quality-section h2 {
     display: block;
   }
 }
