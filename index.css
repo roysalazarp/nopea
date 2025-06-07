@@ -32,38 +32,21 @@
   --font-gasoek: "Gasoek One", var(--font-system);
 
   /* Typography */
-  --font-size-base: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: 2rem;
-  --font-size-xxl: 3.5rem;
+  --font-size-base: 1.06rem;
+  --line-height-base: 2.3rem;
+
   /* --letter-spacing-tight: -0.02em; */
 }
 
+/* Remove some default styles */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-html {
-  background-image: url(assets/images/512x512_Dissolve_Noise_Texture.png);
-  background-color: var(--color-bg);
-  background-repeat: repeat;
-  background-size: 500px 500px;
-  background-blend-mode: multiply;
-}
-
-body {
-  font-family: var(--font-inter);
-  color: var(--color-text-dark-bg);
-  font-size: var(--font-size-base);
-  line-height: 1.6;
-
-  font-size: clamp(1.1rem, 2vw, 1.06rem);
-  line-height: clamp(2rem, 4vw, 2.3rem);
-
   margin: 0;
   padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 a {
@@ -77,92 +60,52 @@ ul {
   list-style: none;
 }
 
-h1 {
-  font-family: var(--font-gasoek);
-  color: #ffffff;
-  font-weight: 400; /* h1 is bold by default, but Gasoek One font should be rendered as regular */
-  font-size: clamp(3.5rem, 8vw, 4.45rem);
-  line-height: clamp(3.5rem, 8vw, 4.5rem);
-  margin-block-start: 0em;
-  margin-block-end: 1em;
+/* Generic widely applied styles */
+
+html {
+  background-image: url(assets/images/512x512_Dissolve_Noise_Texture.png);
+  background-color: var(--color-bg);
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  background-blend-mode: multiply;
 }
 
-#hero-section {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  max-width: 685px;
-  height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
-}
-
-p,
-a,
-li {
+body {
   font-family: var(--font-inter);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-dark-bg);
   font-weight: 500;
-  margin-block-start: 0;
   margin-block-end: 2em;
 }
 
-li {
-  margin-block-end: 0;
+h1,
+h2 {
+  font-family: var(--font-gasoek);
+  color: #ffffff;
+  font-weight: 400; /* h1 is bold by default, but Gasoek One font should be rendered as regular */
+  font-size: 4.45rem;
+  line-height: 4.5rem;
+  margin-block-end: 1em;
+}
+
+p,
+a {
+  margin-block-end: 2em;
 }
 
 strong {
   color: #ffffff;
 }
 
-#top-bar {
+/* Hero section styles */
+
+#hero-section {
+  height: 100svh;
+  width: 685px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 3.5rem;
-  margin-bottom: auto;
-  align-items: center;
-}
-
-#top-bar * {
-  margin-block-end: 0;
-}
-
-#top-bar p {
-  margin-inline: 2rem;
-  text-align: center;
-}
-
-#top-bar a {
-  color: var(--color-accent);
-}
-
-#fast-apps {
-  display: none;
-}
-
-#top-bar-company {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#hero-logo {
-  color: var(--color-accent);
-  font-family: var(--font-blaka);
-  font-size: 50px;
-  line-height: 0;
-  top: 13px;
-}
-
-#hero-company-name {
-  color: #ffffff;
-  font-family: var(--font-jetbrains-mono);
-  margin-left: 0.5rem;
-}
-
-#hero-content {
-  margin-bottom: auto;
+  flex-direction: column;
+  margin-inline: auto;
 }
 
 #hero-section::after {
@@ -451,11 +394,59 @@ strong {
     #1a1a1a;
 }
 
-#the-problem-section {
-  margin-block-start: 0;
+#hero-section-top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3.5rem;
+  margin-bottom: auto;
+  align-items: center;
+}
+
+#hero-section-top-bar * {
   margin-block-end: 0;
+}
+
+#hero-section-top-bar div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#hero-section-top-bar-logo {
+  color: var(--color-accent);
+  font-family: var(--font-blaka);
+  font-size: 50px;
+  line-height: 0;
+  top: 13px;
+}
+
+#hero-section-top-bar-company-name {
+  color: #ffffff;
+  font-family: var(--font-jetbrains-mono);
+  margin-left: 0.5rem;
+}
+
+#hero-section-top-bar p {
+  margin-inline: 2rem;
+  text-align: center;
+}
+
+#hero-section-top-bar a {
+  color: var(--color-accent);
+}
+
+#hero-section-content {
+  margin-bottom: auto;
+}
+
+/* The problem section styles */
+
+#the-problem-section {
+  color: var(--color-text-light-bg);
+
   height: 100svh;
-  width: 100vw;
+  width: 92vw;
   margin-left: auto;
 
   display: grid;
@@ -463,27 +454,83 @@ strong {
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
   grid-template-areas:
-    "b b b b b b b c c c c c c c"
-    "b b b b b b b c c c c c c c"
-    "a a a a a a a a a a a a a a"
-    "h h h h h h h h h h h h h h"
-    "h h h h h h h h h h h h h h"
-    "h h h h h h h h h h h h h h"
-    "h h h h h h h h h h h h h h"
-    "h h h h h h h h h h h h h h"
-    "h h h h h h h h h h h h h h"
-    "h h h h h h h h h h h h h h"
-    "h h h h h h h h h h h h h h"
-    "h h h h h h h h h h h h h h";
+    "a a a a a a b b c c c c d d"
+    "a a a a a a b b c c c c d d"
+    "a a a a a a b b c c c c d d"
+    "a a a a a a b b c c c c d d"
+    "a a a a a a e e f f f f g g"
+    "h h h h h h h h h h h h i i"
+    "h h h h h h h h h h h h i i"
+    "h h h h h h h h h h h h i i"
+    "j j j j j j j j j j j j j j";
 
   background: #539075;
-  color: var(--color-text-light-bg);
 }
 
-#the-problem-section ul {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
+.a {
+  display: flex;
+  grid-area: a;
+  align-items: end;
+  padding: 2rem;
+  background: var(--color-accent);
+}
+
+.b {
+  display: flex;
+  grid-area: b;
+  padding-block: 4rem;
+  background: var(--color-accent);
+}
+
+.c {
+  display: flex;
+  grid-area: c;
+  padding-block: 4rem;
+  background: var(--color-accent);
+}
+
+.d {
+  display: flex;
+  grid-area: d;
+  background: var(--color-accent);
+}
+
+.e {
+  display: flex;
+  grid-area: e;
+  background: var(--color-accent);
+}
+
+.f {
+  display: flex;
+  grid-area: f;
+  background: var(--color-accent);
+}
+
+.g {
+  display: flex;
+  grid-area: g;
+  background: var(--color-accent);
+}
+
+.h {
+  display: flex;
+  grid-area: h;
+  padding: 2rem;
+  align-items: center;
+  background: var(--color-accent);
+}
+
+.i {
+  display: flex;
+  grid-area: i;
+  background: var(--color-accent);
+}
+
+.j {
+  display: flex;
+  grid-area: j;
+  background: var(--color-accent);
 }
 
 #the-problem-section h1 {
@@ -491,60 +538,8 @@ strong {
   margin-block-end: 0;
 }
 
-.item {
-  background: var(--color-accent);
-}
-
-.a {
-  display: flex;
-  align-items: end;
-  grid-area: a;
-}
-
-.a h1 {
-  font-size: clamp(4rem, 7vw, 3rem);
-  line-height: clamp(4rem, 7vw, 3.5rem);
-  padding: 2rem;
-}
-
-.b {
-  padding-block: 5vw;
-  grid-area: b;
-}
-.c {
-  padding-block: 4vw;
-  grid-area: c;
-}
-.d {
-  grid-area: d;
-  display: none;
-}
-.e {
-  grid-area: e;
-  display: none;
-}
-.f {
-  grid-area: f;
-  display: none;
-}
-.g {
-  grid-area: g;
-  display: none;
-}
-.h {
-  grid-area: h;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-}
-.i {
-  grid-area: i;
-  display: none;
-}
-.j {
-  grid-area: j;
-  display: none;
-}
+/* IMPORTANT: LEFT OFF HERE! */
+/* Business section */
 
 #business-section {
   height: 100svh;
@@ -651,7 +646,7 @@ strong {
 }
 
 @media screen and (min-width: 956px) {
-  #the-problem-section {
+  /* #the-problem-section {
     grid-template-areas:
       "a a a a a a b b c c c c d d"
       "a a a a a a b b c c c c d d"
@@ -676,7 +671,7 @@ strong {
   .i,
   .j {
     display: flex;
-  }
+  } */
 
   #business-section {
     display: flex;
@@ -702,7 +697,7 @@ strong {
 }
 
 @media screen and (max-width: 956px) {
-  #top-bar p {
+  #hero-section-top-bar p {
     display: none;
   }
 
