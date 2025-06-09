@@ -62,6 +62,7 @@ html {
   background-repeat: repeat;
   background-size: 500px 500px;
   background-blend-mode: multiply;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -95,9 +96,14 @@ a {
   font-family: var(--font-jetbrains-mono);
 }
 
+section {
+  scroll-snap-align: start;
+  position: relative;
+}
+
 /* Hero section styles */
 
-.hero {
+.hero__container {
   height: 100svh;
   width: 685px;
   display: flex;
@@ -105,7 +111,7 @@ a {
   margin-inline: auto;
 }
 
-.hero::after {
+.hero__container::after {
   content: "";
   display: block;
   background-color: #ffffff;
@@ -438,7 +444,7 @@ a {
 
 /* Problem section styles */
 
-.problem {
+.problem__container {
   color: var(--color-text-light-bg);
   height: 100svh;
   width: 90vw;
@@ -518,7 +524,7 @@ a {
 
 /* Business section */
 
-.business {
+.business__container {
   display: flex;
   flex-direction: row;
   height: 100svh;
@@ -528,13 +534,13 @@ a {
   gap: 6rem;
 }
 
-.business__container {
+.business__content-container {
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
-.business__container--justify {
+.business__content-container--justify {
   justify-content: end;
 }
 
@@ -554,7 +560,7 @@ a {
   gap: 0.5rem;
 }
 
-.business::after {
+.business__container::after {
   content: "";
   position: absolute;
   background-position: bottom 50px right 0;
@@ -570,7 +576,7 @@ a {
 
 /* Quality section */
 
-.quality {
+.quality__container {
   display: flex;
   flex-direction: row;
   height: 100svh;
@@ -653,16 +659,16 @@ a {
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
   grid-template-areas:
-    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
-    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
-    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
-    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
-    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
-    "f f f f f f f f f f f f f f d d d d d d d d d d d d e"
-    "f f f f f f f f f f f f f f d d d d d d d d d d d d e"
-    "f f f f f f f f f f f f f f d d d d d d d d d d d d e"
-    "f f f f f f f f f f f f f f d d d d d d d d d d d d e"
-    "g g g g g g g g g g h h h h i i i i i i j j j j j j k";
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d d d e"
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d d d e"
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d d d e"
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d d d e"
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d d d e"
+    "f f f f f f f f f f f f f f d d d d d d d d d d d d d d e"
+    "f f f f f f f f f f f f f f d d d d d d d d d d d d d d e"
+    "f f f f f f f f f f f f f f d d d d d d d d d d d d d d e"
+    "f f f f f f f f f f f f f f d d d d d d d d d d d d d d e"
+    "g g g g g g g g g g h h h h i i i i i i i i j j j j j j k";
   background: #539075;
 }
 
