@@ -91,6 +91,10 @@ a {
   color: #ffffff;
 }
 
+.font-mono {
+  font-family: var(--font-jetbrains-mono);
+}
+
 /* Hero section styles */
 
 .hero {
@@ -416,7 +420,6 @@ a {
 
 .top-bar__company-name {
   color: #ffffff;
-  font-family: var(--font-jetbrains-mono);
   margin-left: 0.5rem;
 }
 
@@ -457,7 +460,7 @@ a {
   background: #539075;
 }
 
-.problem__area {
+.area {
   display: flex;
   background: var(--color-accent);
 }
@@ -631,4 +634,108 @@ a {
   flex-direction: column;
   justify-content: flex-end;
   flex: 7;
+}
+
+/* Contact section */
+
+.contact {
+  height: 100svh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__grid {
+  color: var(--color-text-light-bg);
+  height: 70svh;
+  display: grid;
+  gap: 1px;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-areas:
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
+    "a a a a b b b b b b c c c c d d d d d d d d d d d d e"
+    "f f f f f f f f f f f f f f d d d d d d d d d d d d e"
+    "f f f f f f f f f f f f f f d d d d d d d d d d d d e"
+    "f f f f f f f f f f f f f f d d d d d d d d d d d d e"
+    "f f f f f f f f f f f f f f d d d d d d d d d d d d e"
+    "g g g g g g g g g g h h h h i i i i i i j j j j j j k";
+  background: #539075;
+}
+
+.contact__area--a {
+  grid-area: a;
+}
+
+.contact__area--b {
+  grid-area: b;
+}
+
+.contact__area--c {
+  grid-area: c;
+}
+
+.contact__area--d {
+  grid-area: d;
+}
+
+.contact__body {
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 0;
+  padding: 2rem;
+  justify-content: end;
+  width: 100%;
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 0;
+  padding: 1rem;
+  line-height: 1em;
+  justify-content: end;
+  width: 100%;
+  text-align: end;
+}
+
+.contact__area--e {
+  grid-area: e;
+}
+
+.contact__area--f {
+  grid-area: f;
+}
+
+.contact__area--g {
+  grid-area: g;
+}
+
+.contact__area--h {
+  grid-area: h;
+}
+
+.contact__area--i {
+  grid-area: i;
+}
+
+.contact__area--j {
+  grid-area: j;
+}
+
+.contact__area--k {
+  grid-area: k;
+}
+
+.footer__copyright {
+  color: var(--color-accent);
+  display: flex;
+  padding: 2rem;
+  justify-content: end;
+  margin-top: auto;
+  margin-block-end: 0;
+  line-height: 1em;
 }
