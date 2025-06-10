@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
   </head>
-  <body>
+  <body class="bg">
     <section class="hero">
       <div class="hero__container">
         <div class="hero__top-bar">
@@ -19,15 +19,25 @@
           <a class="top-bar__contact" href="#contact">Contact us</a>
         </div>
         <div class="hero__content">
-          <h1>We live in the age of beautiful junk.</h1>
-          <p>
+          <h1 class="hero__heading">We live in the age of beautiful junk.</h1>
+          <h1 class="hero__heading--mobile">
+            We live <br />
+            in the <br />
+            age of <br />
+            beautiful <br />junk.
+          </h1>
+          <p class="hero__body--mobile">
+            —<strong class="highlight--light"> we </strong>
+            , build carefully engineered apps
+          </p>
+          <p class="hero__body">
             <strong class="highlight--light">
               We’ve all experienced how fragile “modern” apps can be.
             </strong>
             One small mistake while filling out a form, and the app freezes,
             buttons stop responding, or everything just crashes.
           </p>
-          <p>
+          <p class="hero__body">
             <strong class="highlight--light">
               We've grown accustomed to unreliable software—we’ve learned to
               settle for less.
@@ -36,10 +46,29 @@
         </div>
       </div>
     </section>
+    <section class="into">
+      <p class="intro__body">
+        <strong class="highlight--light">
+          We’ve all experienced how fragile “modern” apps can be.
+        </strong>
+        One small mistake while filling out a form, and the app freezes, buttons
+        stop responding, or everything just crashes.
+      </p>
+      <p class="intro__body">
+        <strong class="highlight--light">
+          We've grown accustomed to unreliable software—we’ve learned to settle
+          for less.
+        </strong>
+      </p>
+    </section>
     <section class="problem">
-      <div class="problem__container">
+      <div class="problem__grid">
         <div class="area problem__area--a">
-          <h1 class="problem__heading">Are you tired of...</h1>
+          <h1 class="problem__heading">
+            Are you <br />
+            tired <br />
+            of...
+          </h1>
         </div>
         <div class="area problem__area--b">
           <img
@@ -87,17 +116,22 @@
         <div
           class="business__content-container business__content-container--justify"
         >
-          <h1 class="business__heading">This is how we do business.</h1>
+          <h1 class="business__heading">
+            This is <br />
+            how we <br />do <br />
+            business.
+          </h1>
           <p>
             We start by working with you to define your desired business
             outcomes, and along the way, we
             <strong class="highlight--light">
-              benchmark progress against the key metrics you want to improve
+              benchmark progress against the key metrics you want to improve.
             </strong>
-            .
           </p>
         </div>
-        <div class="business__content-container">
+        <div
+          class="business__content-container business__content-container--pricing"
+        >
           <p>
             We charge 100% upfront for the project. However, if for any reason
             you're not satisfied with how things are going during the first 30
@@ -137,6 +171,7 @@
           <img class="quality__image" src="assets/icons/quality.svg" />
         </div>
         <div class="quality__body">
+          <h1 class="quality__heading--mobile">Quality is our core value.</h1>
           <p>
             Throughout our professional careers, we’ve encountered many
             low-quality projects—often driven by the desire to make quick money,
@@ -154,11 +189,9 @@
     <section id="contact" class="contact">
       <div class="contact__grid">
         <div class="area contact__area--a"></div>
-        <div class="area contact__area--b">
-          <p class="contact__details">support@nopea.it.com</p>
-        </div>
+        <div class="area contact__area--b"></div>
         <div class="area contact__area--c"></div>
-        <div class="area contact__area--d">
+        <div class="area area--mobile contact__area--d">
           <p class="contact__body">
             Because our focus is on business outcomes, we recognize that
             building custom software is sometimes more than what's necessary. In
@@ -170,9 +203,12 @@
             custom solution, then you’re in the right place.
           </p>
         </div>
-        <div class="area contact__area--e"></div>
-        <div class="area contact__area--f">
-          <p class="contact__details font-mono">+358 44 23 15 757</p>
+        <div class="area area--mobile contact__area--e">
+          <p class="contact__details">support@nopea.it.com</p>
+        </div>
+        <div class="area area--mobile contact__area--f">
+          <!-- Hack: Use an <a> tag for phone number because of weird bottom padding shown in iOS Safari when using a <p> tag -->
+          <a class="contact__details font-mono">+358 44 23 15 757</a>
         </div>
         <div class="area contact__area--g"></div>
         <div class="area contact__area--h"></div>
