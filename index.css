@@ -4,18 +4,6 @@
   src: url("assets/fonts/gasoekone-regular.woff") format("woff");
 }
 
-@font-face {
-  font-family: "Blaka";
-  font-weight: 400;
-  src: url("assets/fonts/blaka-regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "JetBrains Mono";
-  font-weight: 500;
-  src: url("assets/fonts/jetbrainsmono-medium.woff") format("woff");
-}
-
 :root {
   /* Colors */
   --color-bg: #1f1f1f;
@@ -26,9 +14,6 @@
   /* Font Families */
   --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
     sans-serif;
-  --font-inter: "Inter", var(--font-system);
-  --font-jetbrains-mono: "JetBrains Mono", var(--font-system);
-  --font-blaka: "Blaka", var(--font-system);
   --font-gasoek: "Gasoek One", var(--font-system);
 }
 
@@ -61,7 +46,7 @@ html {
 }
 
 body {
-  font-family: var(--font-inter);
+  font-family: var(--font-system);
   font-size: 1.06rem;
   line-height: 2.3rem;
   color: var(--color-text-dark-bg);
@@ -87,10 +72,6 @@ a {
   color: #ffffff;
 }
 
-.font-mono {
-  font-family: var(--font-jetbrains-mono);
-}
-
 section {
   scroll-snap-align: start;
   position: relative;
@@ -105,11 +86,10 @@ section {
   content: "";
   position: absolute;
   inset: 0px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/512x512_Dissolve_Noise_Texture.png");
-  background-size: 500px;
+  background-image: url("/assets/images/noise.png");
+  background-size: 300px;
   background-repeat: repeat;
   mix-blend-mode: overlay;
-  opacity: 30%;
   z-index: -1;
 }
 
@@ -424,17 +404,20 @@ section {
   align-items: center;
 }
 
-.top-bar__logo {
-  color: var(--color-accent);
-  font-family: var(--font-blaka);
-  font-size: 50px;
-  line-height: 0;
-  top: 13px;
+.top-bar__company-name::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background-image: url("/assets/icons/logo.svg");
+  background-repeat: no-repeat;
+  top: 6px;
+  left: 0;
 }
 
 .top-bar__company-name {
+  position: relative;
   color: #ffffff;
-  margin-left: 0.5rem;
+  padding-left: 2rem;
 }
 
 .hero__heading--mobile,
@@ -899,6 +882,10 @@ section {
   .hero__top-bar {
     margin-top: 2em;
     margin-bottom: 4em;
+  }
+
+  .top-bar__company-name::before {
+    top: 2px;
   }
 
   .top-bar__statement {
