@@ -66,7 +66,6 @@
             line-height: 1.5rem;
         }
 
-        /* pulse */
         .pulse {
             margin-right: 0.75rem;
             width: 12px;
@@ -120,8 +119,6 @@
             }
         }
 
-        /* styles */
-
         .padding-inline {
             padding-inline: 1rem;
         }
@@ -130,22 +127,13 @@
             margin-inline: auto;
         }
 
+        /* styles */
+
         .nav {
-            /* background-color: red; */
             width: 100%;
             height: 4rem;
             display: flex;
             padding-block: 1rem;
-        }
-
-        .nav__logo {
-            /* background-color: purple; */
-            /* color: red; */
-            height: 100%;
-        }
-
-        .nav__logo svg {
-            height: 100%;
         }
 
         .hero {
@@ -154,13 +142,26 @@
             margin-top: 4rem;
         }
 
-        .hero__heading {
+        .hero__title {
             font-size: 2.5rem;
             font-weight: 550;
             letter-spacing: -0.05rem;
         }
 
-        .hero_statement {
+        .fast {
+            display: inline-flex;
+            font-family: serif;
+            font-weight: bold;
+            color: rgb(30, 30, 30);
+            transform: skewX(-20deg);
+            filter: blur(0.4px);
+            text-shadow:
+                -2px 0 2px rgba(0, 0, 0, 0.3),
+                -4px 0 4px rgba(0, 0, 0, 0.25),
+                -6px 0 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero__text {
             font-size: 1rem;
             font-weight: normal;
             margin-top: 2rem;
@@ -185,45 +186,23 @@
             text-underline-offset: 0.5rem;
         }
 
-        .value {
+        .guarantee {
             display: flex;
             flex-direction: column;
             margin-top: 3rem;
         }
 
-        .value__card {
+        .card {
             position: relative;
             display: flex;
             flex-direction: column;
             margin-top: 1rem;
-            background-color: #f4f5f6;
+            background-color: #f3f4f8;
             padding: 2rem;
         }
 
-        .card__overlay {
-            background-image: url('https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .card__overlay::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            pointer-events: none;
-            /* so it doesn't block clicks */
-        }
-
-        .card__title-container {
-            display: flex;
-            margin-top: 7rem;
-        }
-
         .card__title {
+            margin-top: 5rem;
             font-size: 1.5rem;
             font-weight: 600;
         }
@@ -236,23 +215,32 @@
 
         .card__icon svg {
             height: 100%;
+            color: #202327;
+        }
+
+        .card__icon path {
+            stroke: #202327;
+            stroke-width: 1;
+            fill: transparent;
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: draw 8s ease forwards, fillIn 3s ease forwards 1s;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes fillIn {
+            to {
+                fill: currentColor;
+            }
         }
 
         .card__text {
             margin-top: 1.5rem;
-        }
-
-        .card__text strong {
-            color: white;
-        }
-
-        .card__title,
-        .card__icon,
-        .card__text {
-            position: relative;
-            color: #e2e2e2;
-            z-index: 1;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 1);
         }
 
         .curious {
@@ -300,7 +288,7 @@
             cursor: pointer;
         }
 
-        .step__header h3 {
+        .step__title {
             margin: 0;
             font-size: 1.25rem;
             max-width: 85%;
@@ -333,19 +321,17 @@
 
 <body>
     <nav class="nav padding-inline">
-        <div class="nav__logo">
-            <svg viewBox="0 0 28 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M11.842 31L0.93 28.024L2.852 20.832V10.54L0.93 10.044L3.348 0.991998L13.02 3.658L14.012 0L27.59 3.72L25.544 11.408V21.39L27.59 21.948L25.172 31L14.26 28.024L16.182 20.832V10.292L12.834 9.362L12.214 11.656V21.39L14.26 21.948L11.842 31Z"
-                    fill="currentColor" />
-            </svg>
-        </div>
+        <svg viewBox="0 0 28 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M11.842 31L0.93 28.024L2.852 20.832V10.54L0.93 10.044L3.348 0.991998L13.02 3.658L14.012 0L27.59 3.72L25.544 11.408V21.39L27.59 21.948L25.172 31L14.26 28.024L16.182 20.832V10.292L12.834 9.362L12.214 11.656V21.39L14.26 21.948L11.842 31Z"
+                fill="currentColor" />
+        </svg>
     </nav>
     <main class="hero padding-inline">
-        <h1 class="hero__heading">
-            Web apps that respond in under 0.1 seconds
+        <h1 class="hero__title">
+            Web apps that respond in under <span class="fast">0.1 seconds</span>
         </h1>
-        <h3 class="hero_statement">
+        <h3 class="hero__text">
             Leverage our high-performance apps to keep your users highly engaged.
         </h3>
         <button class="btn">
@@ -357,24 +343,22 @@
         </button>
     </main>
 
-    <section class="value">
-        <div class="value__card card__overlay">
+    <section class="guarantee">
+        <div class="card">
             <div class="card__icon">
-                <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 49 49" xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M18.48 27.2992L11.2022 34.5771L8.73678 32.1117L16.0147 24.8338L18.48 27.2992ZM19.4522 28.2713L12.1743 35.5492L14.6397 38.0146L21.9175 30.7367L19.4522 28.2713ZM13.3485 22.1663C13.0887 21.9064 12.7435 21.7634 12.3764 21.7634C12.0093 21.7634 11.6642 21.9064 11.4043 22.1663L6.07066 27.4999C5.53303 28.0376 5.53303 28.9079 6.07066 29.4442L7.76466 31.1382L15.0425 23.8603L13.3485 22.1663ZM24.9879 34.3749C24.9879 34.0078 24.8449 33.6627 24.585 33.4028L22.891 31.7088L15.6132 38.9867L17.3058 40.6793C17.842 41.2169 18.7124 41.2169 19.25 40.6793L24.585 35.3471C24.8449 35.0872 24.9879 34.7421 24.9879 34.3749ZM43.0293 10.0278L36.7235 3.72207C36.1859 3.18444 35.3155 3.18444 34.7793 3.72207L28.8764 9.62494H25.6548C24.5603 9.62494 23.5112 10.0594 22.7384 10.8336L16.6692 16.9028C16.1329 17.4391 16.1329 18.3108 16.6692 18.8471L16.9057 19.0836C17.1655 19.3434 17.5107 19.4864 17.8778 19.4864C18.2449 19.4864 18.59 19.3434 18.8499 19.0836L22.2379 15.6956C23.8494 14.0841 26.4605 14.0841 28.072 15.6956L35.7514 23.3749L37.1264 24.7499V17.8749L43.0293 11.9721C43.5655 11.4358 43.5655 10.5641 43.0293 10.0278ZM27.0999 16.6677C26.026 15.5924 24.2839 15.5924 23.21 16.6663L19.822 20.0557C19.2844 20.5933 18.5818 20.8614 17.8778 20.8614C17.1738 20.8614 16.4698 20.5933 15.9335 20.0557L15.697 19.8192C14.6232 18.7453 14.6232 17.0046 15.697 15.9307L22.0014 9.62494H15.1264L9.22353 3.72207C8.68591 3.18444 7.81553 3.18444 7.27928 3.72207L0.973531 10.0278C0.435906 10.5654 0.435906 11.4358 0.973531 11.9721L6.87641 17.8749V24.7499L10.4322 21.1942C10.9684 20.6579 11.6724 20.3884 12.3764 20.3884C13.0804 20.3884 13.7844 20.6566 14.3207 21.1942L25.5572 32.4307C26.2405 33.1141 26.4853 34.0683 26.2983 34.9497L29.3632 38.0146L31.8285 35.5492L26.8139 30.5346C26.5458 30.2664 26.5458 29.8306 26.8139 29.5624C27.082 29.2943 27.5179 29.2943 27.786 29.5624L32.7993 34.5757L35.2647 32.1103L30.2514 27.0971C29.9833 26.8289 29.9833 26.3931 30.2514 26.1249C30.5195 25.8568 30.9554 25.8568 31.2235 26.1249L36.2368 31.1382L37.9253 29.4497C38.4615 28.9134 38.4629 28.0431 37.9253 27.5054L27.0999 16.6677ZM22.99 38.8863L24.7679 40.6642C25.3055 41.2018 26.1759 41.2018 26.7122 40.6642L28.3072 39.0678L25.5558 36.3192L22.99 38.8863Z"
+                        d="M42,4H6A2,2,0,0,0,4,6V32.7L17.5,19.2,22,23.7,33.6,12.1a2.1,2.1,0,0,1,2.4,0,2,2,0,0,1,.4,2.8L22,29.3l-4.5-4.5L4,38.3V42a2,2,0,0,0,2,2H42a2,2,0,0,0,2-2V6A2,2,0,0,0,42,4Z"
                         fill="currentColor" />
                 </svg>
             </div>
-            <div class="card__title-container">
-                <h2 class="card__title">We guarantee business results.</h2>
-            </div>
+            <h2 class="card__title">We guarantee business results.</h2>
             <p class="card__text">
                 We work with you to define your desired business outcomes, and along the way, we <strong>benchmark
                     progress against the key metrics you want to improve.</strong>
             </p>
         </div>
-        <div class="value__card card__overlay">
+        <div class="card">
             <div class="card__icon">
                 <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -382,15 +366,13 @@
                         fill="currentColor" />
                 </svg>
             </div>
-            <div class="card__title-container">
-                <h2 class="card__title">No budget overruns!</h2>
-            </div>
+            <h2 class="card__title">No budget overruns!</h2>
             <p class="card__text">
                 We don’t charge for hours or deliverables. You pay a <strong>fixed price</strong> for results, with
                 any unexpected but pre-agreed extra work or support covered at no additional cost.
             </p>
         </div>
-        <div class="value__card card__overlay">
+        <div class="card">
             <div class="card__icon">
                 <svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -398,9 +380,7 @@
                         fill="currentColor" />
                 </svg>
             </div>
-            <div class="card__title-container">
-                <h2 class="card__title">No risks.</h2>
-            </div>
+            <h2 class="card__title">No risks.</h2>
             <p class="card__text">
                 We charge 100% upfront for the project. However, if for any reason you're not satisfied with how things
                 are going during the first <strong>30 days</strong>, no problem—we can call it off, and you’ll
@@ -423,7 +403,7 @@
         <h2 class="method__title padding-inline">Here’s how we work with you.</h2>
         <div class="step step--first">
             <div class="step__header">
-                <h3>We start by getting to know your specific business needs.</h3>
+                <h3 class="step__title">We start by getting to know your specific business needs.</h3>
                 <span class="arrow">↓</span>
             </div>
             <p class="step__text">
@@ -432,7 +412,7 @@
         </div>
         <div class="step">
             <div class="step__header">
-                <h3>Next, we send you a proposal with multiple options.</h3>
+                <h3 class="step__title">Next, we send you a proposal with multiple options.</h3>
                 <span class="arrow">↓</span>
             </div>
             <p class="step__text">
@@ -441,7 +421,7 @@
         </div>
         <div class="step">
             <div class="step__header">
-                <h3>You choose one option and proceed with payment.</h3>
+                <h3 class="step__title">You choose one option and proceed with payment.</h3>
                 <span class="arrow">↓</span>
             </div>
             <p class="step__text">
@@ -450,7 +430,7 @@
         </div>
         <div class="step">
             <div class="step__header">
-                <h3>We then set up communication and collaboration channels.</h3>
+                <h3 class="step__title">We then set up communication and collaboration channels.</h3>
                 <span class="arrow">↓</span>
             </div>
             <p class="step__text">
@@ -459,7 +439,8 @@
         </div>
         <div class="step">
             <div class="step__header">
-                <h3>In some cases, we may find it beneficial to conduct interviews with key members of your team.</h3>
+                <h3 class="step__title">In some cases, we may find it beneficial to conduct interviews with key members
+                    of your team.</h3>
                 <span class="arrow">↓</span>
             </div>
             <p class="step__text">
@@ -468,7 +449,8 @@
         </div>
         <div class="step">
             <div class="step__header">
-                <h3>We present to you an outline of our approach to improving your key business metrics.</h3>
+                <h3 class="step__title">We present to you an outline of our approach to improving your key business
+                    metrics.</h3>
                 <span class="arrow">↓</span>
             </div>
             <p class="step__text">
@@ -477,7 +459,8 @@
         </div>
         <div class="step">
             <div class="step__header">
-                <h3>We begin implementation and measure progress based on your desired outcomes.</h3>
+                <h3 class="step__title">We begin implementation and measure progress based on your desired outcomes.
+                </h3>
                 <span class="arrow">↓</span>
             </div>
             <p class="step__text">
@@ -486,7 +469,7 @@
         </div>
         <div class="step">
             <div class="step__header">
-                <h3>Once complete, we hand over the final deliverables.</h3>
+                <h3 class="step__title">Once complete, we hand over the final deliverables.</h3>
                 <span class="arrow">↓</span>
             </div>
             <p class="step__text">
@@ -495,7 +478,8 @@
         </div>
         <div class="step">
             <div class="step__header">
-                <h3>We follow up to evaluate our solution’s contribution to your goals and provide free support as
+                <h3 class="step__title">We follow up to evaluate our solution’s contribution to your goals and provide
+                    free support as
                     agreed.</h3>
                 <span class="arrow">↓</span>
             </div>
@@ -504,7 +488,6 @@
             </p>
         </div>
     </section>
-
     <script>
         document.querySelectorAll('.step__header').forEach(header => {
             header.addEventListener('click', () => {
