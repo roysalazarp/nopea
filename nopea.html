@@ -61,9 +61,11 @@
             font-size: 1rem;
             appearance: none;
             -webkit-appearance: none;
+            font-family: inherit;
             border: none;
             background: none;
             cursor: pointer;
+            color: inherit;
         }
 
         p {
@@ -71,7 +73,6 @@
         }
 
         .pulse {
-            margin-right: 0.75rem;
             width: 12px;
             height: 12px;
             border-radius: 50%;
@@ -124,11 +125,15 @@
         }
 
         .padding-inline {
-            padding-inline: 1rem;
+            padding-inline: 2rem;
         }
 
         .margin-inline {
             margin-inline: auto;
+        }
+
+        .no-click {
+            pointer-events: none;
         }
 
         /* styles */
@@ -177,14 +182,34 @@
             margin-top: 2rem;
             color: white;
             background-color: black;
-            padding: 1rem;
+            height: 3rem;
             border-radius: 0.5rem;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            max-width: 500px;
+            padding-inline: 2rem;
+            max-width: 400px;
+            gap: 0.75rem;
+        }
+
+        .btn-arrow {
+            font-size: 1.2rem;
+            transform: rotate(-90deg);
+        }
+
+        .btn--light {
+            background-color: #aeee1e;
+            color: black;
+        }
+
+        .link__btn-container {
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .link__btn-container p {
+            opacity: 50%;
         }
 
         .link__btn {
@@ -201,7 +226,7 @@
         .guarantee {
             display: flex;
             flex-direction: column;
-            margin-top: 3rem;
+            margin-top: 4rem;
             gap: 1rem;
         }
 
@@ -337,7 +362,6 @@
         .value__img {
             display: flex;
             flex: 1;
-            background-color: red;
             width: 100%;
             background-size: cover;
             background-position: top;
@@ -352,16 +376,12 @@
         .steps__title {
             font-size: 2.5rem;
             font-weight: 550;
+            margin-bottom: 1rem;
         }
 
         .step {
             padding-block: 20px;
-            border-bottom: 1px solid #8f8f8f;
-        }
-
-        .step--first {
-            border-top: 1px solid #8f8f8f;
-            margin-top: 2rem;
+            border-bottom: 1px solid #cbcbcb;
         }
 
         .step__header {
@@ -388,7 +408,7 @@
             transition: transform 0.3s ease;
         }
 
-        .arrow.rotate {
+        .arrow .rotate {
             transform: rotate(180deg);
         }
 
@@ -406,8 +426,55 @@
             opacity: 1;
         }
 
+        .ready {
+            background: #000000;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.82) 50%, rgba(0, 0, 0, 1) 100%);
+            border-radius: 1.5rem;
+            margin-top: 5rem;
+            margin-inline: 1rem;
+            padding-block: 5rem;
+            padding-inline: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .ready__title {
+            font-size: 2.5rem;
+            font-weight: 550;
+        }
+
+        .ready__text-container {
+            margin-bottom: 1rem;
+            max-width: 600px;
+        }
+
+        .ready__available {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 1rem;
+            gap: 1rem;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
         .more-info {
             margin-top: 4rem;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .intro-members-container {
+            flex: 1;
+        }
+
+        .more-info__steps {
+            flex: 1;
         }
 
         .avatar {
@@ -415,6 +482,11 @@
             height: 3rem;
             object-fit: cover;
             border-radius: 50%;
+        }
+
+        .avatar--small {
+            width: 2rem;
+            height: 2rem;
         }
 
         .more-questions__text {
@@ -432,13 +504,27 @@
                 flex-direction: row;
             }
 
+            .guarantee .card {
+                flex: 1;
+            }
+
             .big-tech-icons-container {
                 margin-bottom: 2rem;
             }
 
             .core-method {
                 flex-direction: row;
-                gap: 1rem;
+                gap: 2rem;
+            }
+
+            .steps-container {
+                flex-direction: row;
+                gap: 2rem;
+            }
+
+            .step--first {
+                border-top: 1px solid #cbcbcb;
+                margin-top: 2rem;
             }
         }
     </style>
@@ -462,6 +548,7 @@
         <button class="btn">
             <div class="pulse" role="img" aria-label="Active status"></div>
             Book a call with Roy
+            <span class="btn-arrow">↓</span>
         </button>
         <button class="link__btn">
             or write us an email
@@ -520,8 +607,12 @@
         </h2>
         <button class="btn">
             Book a call with Roy
+            <span class="btn-arrow">↓</span>
         </button>
-        <p class="curious__text">Or write to us at <button class="link__btn">hello@nopea.it.com</button> </p>
+        <div class="link__btn-container">
+            <p class="curious__text">Or write to us at</p>
+            <button class="link__btn">hello@nopea.it.com</button>
+        </div>
     </section>
 
     <div class="core-method">
@@ -637,7 +728,6 @@
                     <span class="arrow">↓</span>
                 </div>
                 <p class="step__text">
-                    <!-- At this stage, we know the key metrics you want to improve for your business.  -->
                     The proposal will include three fixed pricing options, with each package building on the previous
                     one
                     and listing the key metrics we’ll work on.
@@ -665,7 +755,7 @@
                 </p>
             </div>
             <div class="step padding-inline">
-                <div class="step__header">
+                <div class="step__header no-click">
                     <h3 class="step__title">In some cases, we may find it beneficial to conduct interviews with key
                         members
                         of your team.</h3>
@@ -702,16 +792,14 @@
                 </p>
             </div>
             <div class="step padding-inline">
-                <div class="step__header">
+                <div class="step__header no-click">
                     <h3 class="step__title">Once complete, we hand over the final deliverables.</h3>
                 </div>
             </div>
             <div class="step padding-inline">
                 <div class="step__header">
                     <h3 class="step__title">We follow up to evaluate our solution’s contribution to your goals and
-                        provide
-                        free support as
-                        agreed.</h3>
+                        provide free support as agreed.</h3>
                     <span class="arrow">↓</span>
                 </div>
                 <p class="step__text">
@@ -724,64 +812,99 @@
             </div>
         </section>
     </div>
+    <section class="ready">
+        <h2 class="ready__title">Are you ready?</h2>
+        <div class="ready__text-container">
+            <p class="card__text">
+                Because our focus is on business outcomes, we recognize that building custom software is sometimes more
+                than
+                what's necessary. In some cases, a simpler, more affordable solution—like a WordPress site from a
+                freelancer
+                or software built by a team based in a developing country—may be all you need and require far less
+                investment.
+            </p>
+            <p class="card__text">
+                However, if you’ve already explored your options and still believe that what you need is a refined,
+                carefully engineered custom solution, then you’re in the right place.
+            </p>
+        </div>
+        <button class="btn btn--light">
+            <img class="avatar avatar--small" src="./roy-salazar.jpg" alt="Roy Salazar">
+            Book a call with Roy
+            <span class="btn-arrow">↓</span>
+        </button>
+        <div class="ready__available">
+            <div class="pulse" role="img" aria-label="Active status"></div>
+            We’re available to talk
+        </div>
+        <div class="link__btn-container">
+            <p class="curious__text">Or write to us at</p>
+            <button class="link__btn">hello@nopea.it.com</button>
+        </div>
+    </section>
     <section class="more-info">
         <h2 class="steps__title padding-inline">More information</h2>
-        <div class="step padding-inline step--first">
-            <div class="step__header">
-                <div class="step__header-content">
-                    <img class="avatar" src="./roy-salazar.jpg" alt="Roy Salazar">
-                    <h3 class="step__title">Hello, it's Roy</h3>
+        <div class="steps-container">
+            <div class="intro-members-container">
+                <div class="step padding-inline step--first no-click">
+                    <div class="step__header">
+                        <div class="step__header-content">
+                            <img class="avatar" src="./roy-salazar.jpg" alt="Roy Salazar">
+                            <h3 class="step__title">Hello, it's Roy</h3>
+                        </div>
+                    </div>
+                    <p class="step__text show">
+                        I am a software developer and designer with experience across all aspects of product
+                        development,
+                        specializing in building high-performance, reliable applications with low maintenance costs.
+                    </p>
                 </div>
-                <span class="arrow">↓</span>
-            </div>
-            <p class="step__text">
-                I am a software developer and designer with experience across all aspects of product development,
-                specializing in building high-performance, reliable applications with low maintenance costs.
-            </p>
-        </div>
-        <div class="step padding-inline">
-            <div class="step__header">
-                <div class="step__header-content">
-                    <img class="avatar" src="./diego-calle.jpg" alt="Diego Calle">
-                    <h3 class="step__title">Hi, I am Diego</h3>
+                <div class="step padding-inline no-click">
+                    <div class="step__header">
+                        <div class="step__header-content">
+                            <img class="avatar" src="./diego-calle.jpg" alt="Diego Calle">
+                            <h3 class="step__title">Hi, I am Diego</h3>
+                        </div>
+                    </div>
+                    <p class="step__text show">
+                        Coming soon.
+                    </p>
                 </div>
-                <span class="arrow">↓</span>
             </div>
-            <p class="step__text">
-                We’ll have an initial discussion to understand your goals, challenges, and desired outcomes.
-            </p>
-        </div>
-        <div class="step padding-inline">
-            <div class="step__header">
-                <h3 class="step__title">Do you do UI/UX design as well?</h3>
-                <span class="arrow">↓</span>
+            <div class="more-info__steps">
+                <div class="step padding-inline step--first">
+                    <div class="step__header">
+                        <h3 class="step__title">Do you do UI/UX design as well?</h3>
+                        <span class="arrow">↓</span>
+                    </div>
+                    <p class="step__text">
+                        Coming soon.
+                    </p>
+                </div>
+                <div class="step padding-inline">
+                    <div class="step__header">
+                        <h3 class="step__title">Do you also provide hosting?</h3>
+                        <span class="arrow">↓</span>
+                    </div>
+                    <p class="step__text">
+                        Coming soon.
+                    </p>
+                </div>
+                <div class="step padding-inline">
+                    <div class="step__header">
+                        <h3 class="step__title">I am not sure what I need, can you help me discover it?</h3>
+                        <span class="arrow">↓</span>
+                    </div>
+                    <p class="step__text">
+                        Coming soon.
+                    </p>
+                </div>
+                <p class="more-questions__text padding-inline">
+                    More questions?
+                    <button class="link__btn link__btn--large">hello@nopea.it.com</button>
+                </p>
             </div>
-            <p class="step__text">
-                We’ll have an initial discussion to understand your goals, challenges, and desired outcomes.
-            </p>
         </div>
-        <div class="step padding-inline">
-            <div class="step__header">
-                <h3 class="step__title">Do you also provide hosting?</h3>
-                <span class="arrow">↓</span>
-            </div>
-            <p class="step__text">
-                We’ll have an initial discussion to understand your goals, challenges, and desired outcomes.
-            </p>
-        </div>
-        <div class="step padding-inline">
-            <div class="step__header">
-                <h3 class="step__title">I am not sure what I need, can you help me discover it?</h3>
-                <span class="arrow">↓</span>
-            </div>
-            <p class="step__text">
-                We’ll have an initial discussion to understand your goals, challenges, and desired outcomes.
-            </p>
-        </div>
-        <p class="more-questions__text padding-inline">
-            More questions?
-            <button class="link__btn link__btn--large">hello@nopea.it.com</button>
-        </p>
     </section>
     <script>
         document.querySelectorAll('.step__header').forEach(header => {
