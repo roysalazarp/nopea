@@ -139,16 +139,36 @@
         /* styles */
 
         .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             height: 4rem;
             display: flex;
+            flex-direction: row;
             padding-block: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+        }
+
+        .nav.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-icon {
+            display: flex;
+            height: 2rem;
         }
 
         .hero {
             display: flex;
             flex-direction: column;
-            margin-top: 4rem;
+            margin-top: 8rem;
             align-items: center;
         }
 
@@ -175,11 +195,10 @@
         .hero__text {
             font-size: 1.25rem;
             font-weight: normal;
-            margin-top: 2rem;
+            margin-block: 2rem;
         }
 
         .btn {
-            margin-top: 2rem;
             color: white;
             background-color: black;
             height: 3rem;
@@ -292,6 +311,7 @@
             font-size: 1.5rem;
             font-weight: 600;
             text-align: center;
+            margin-bottom: 2rem;
         }
 
         .curious__text {
@@ -409,7 +429,7 @@
             margin-right: 1rem;
         }
 
-        .arrow .rotate {
+        .arrow.rotate {
             transform: rotate(180deg);
         }
 
@@ -444,10 +464,11 @@
         .ready__title {
             font-size: 2.5rem;
             font-weight: 550;
+            margin-bottom: 1rem;
         }
 
         .ready__text-container {
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
             max-width: 600px;
         }
 
@@ -532,12 +553,19 @@
 </head>
 
 <body>
-    <nav class="nav padding-inline">
-        <svg viewBox="0 0 28 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M11.842 31L0.93 28.024L2.852 20.832V10.54L0.93 10.044L3.348 0.991998L13.02 3.658L14.012 0L27.59 3.72L25.544 11.408V21.39L27.59 21.948L25.172 31L14.26 28.024L16.182 20.832V10.292L12.834 9.362L12.214 11.656V21.39L14.26 21.948L11.842 31Z"
-                fill="currentColor" />
-        </svg>
+    <nav id="navbar" class="nav padding-inline">
+        <button id="nav-icon" class="nav-icon">
+            <svg viewBox="0 0 28 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11.842 31L0.93 28.024L2.852 20.832V10.54L0.93 10.044L3.348 0.991998L13.02 3.658L14.012 0L27.59 3.72L25.544 11.408V21.39L27.59 21.948L25.172 31L14.26 28.024L16.182 20.832V10.292L12.834 9.362L12.214 11.656V21.39L14.26 21.948L11.842 31Z"
+                    fill="currentColor" />
+            </svg>
+        </button>
+        <a href="https://calendly.com/roy-nopea/30min" target="_blank" class="btn">
+            <div class="pulse" role="img" aria-label="Active status"></div>
+            Book a quick call
+            <span class="btn-arrow">↓</span>
+        </a>
     </nav>
     <main class="hero padding-inline">
         <h1 class="hero__title">
@@ -914,6 +942,43 @@
                 const arrow = header.querySelector('.arrow');
                 content.classList.toggle('show');
                 arrow.classList.toggle('rotate');
+            });
+        });
+
+        let lastScrollTop = 0;
+        let scrollThreshold = 10;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll <= 0) {
+                navbar.classList.remove('hidden');
+                return;
+            }
+
+            if (Math.abs(lastScrollTop - currentScroll) <= scrollThreshold) {
+                return;
+            }
+
+            if (currentScroll > lastScrollTop) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+
+            lastScrollTop = currentScroll;
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (e.clientY < 100) {
+                navbar.classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('nav-icon').addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
