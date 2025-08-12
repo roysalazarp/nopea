@@ -142,12 +142,11 @@
 
         p,
         a {
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-block-end: 0em;
         }
 
         button {
-            font-size: 1rem;
             appearance: none;
             -webkit-appearance: none;
             font-family: inherit;
@@ -159,6 +158,12 @@
 
         p {
             line-height: 1.5em;
+        }
+
+        .pulse-container {
+            position: absolute;
+            height: 80%;
+            left: 3.5rem;
         }
 
         .pulse {
@@ -235,7 +240,7 @@
             z-index: 1000;
             transition: transform 0.3s ease-in-out;
             width: 100%;
-            height: 4rem;
+            height: 4.5rem;
             display: flex;
             flex-direction: row;
             padding-block: 1rem;
@@ -252,7 +257,7 @@
 
         .nav-icon {
             display: flex;
-            height: 2rem;
+            height: 2.5rem;
         }
 
         .hero {
@@ -284,21 +289,22 @@
 
         .hero__text {
             font-size: 1.25rem;
+            line-height: 1.5em;
             font-weight: normal;
             margin-block: 2rem;
         }
 
         .btn {
+            position: relative;
             color: white;
             background-color: black;
-            height: 3rem;
+            height: 3.5rem;
             border-radius: 0.5rem;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             padding-inline: 2rem;
-            max-width: 400px;
             gap: 0.75rem;
         }
 
@@ -394,13 +400,13 @@
         .curious {
             display: flex;
             flex-direction: column;
-            margin-top: 2rem;
+            margin-top: 4rem;
             padding: 2rem;
             align-items: center;
         }
 
         .curious__title {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 600;
             text-align: center;
             margin-bottom: 2rem;
@@ -412,7 +418,7 @@
         }
 
         .core-method {
-            margin-top: 3rem;
+            margin-top: 4rem;
             display: flex;
             flex-direction: column;
             gap: 3rem;
@@ -672,13 +678,16 @@
     </nav>
     <main class="hero padding-inline">
         <h1 class="hero__title">
-            Web apps that respond in under <span class="fast">0.1 seconds</span>
+            Apps that respond in under <span class="fast">0.1 seconds</span>
         </h1>
         <h3 class="hero__text">
             Leverage our high-performance apps to keep your users highly engaged.
         </h3>
         <a href="https://calendly.com/roy-nopea/30min" target="_blank" class="btn">
-            <div class="pulse" role="img" aria-label="Active status"></div>
+            <img class="avatar avatar--small" src="./roy-salazar.jpg" alt="Roy Salazar">
+            <div class="pulse-container">
+                <div class="pulse" role="img" aria-label="Active status"></div>
+            </div>
             Book a call with Roy
             <span class="btn-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
