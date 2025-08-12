@@ -232,9 +232,31 @@
 
         /* styles */
 
-        .nav {
+        .construction-banner {
             position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffd603;
+            z-index: 9999;
+            height: 2rem;
+        }
+
+        .construction-banner p {
+            color: #0e0436;
+            font-weight: 500;
+            margin: auto;
+            text-align: center;
+            max-width: 1400px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav {
+            position: fixed;
+            top: 2rem;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -653,6 +675,9 @@
 </head>
 
 <body>
+    <div class="construction-banner">
+        <p>🛠️ Page under construction</p>
+    </div>
     <nav id="navbar" class="nav padding-inline">
         <button id="nav-icon" class="nav-icon">
             <svg viewBox="0 0 573 574" fill="none" xmlns="http://www.w3.org/2000/svg">
