@@ -9,10 +9,6 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Primary SEO Meta Tags -->
     <title>High-Performance Web Apps Under 0.1 Seconds | Nopea</title>
     <meta name="title" content="High-Performance Web Apps Under 0.1 Seconds | Nopea">
     <meta name="description"
@@ -23,76 +19,6 @@
     <meta name="language" content="English">
     <meta name="author" content="Nopea - Roy Salazar">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nopea.it/">
-    <meta property="og:title" content="High-Performance Web Apps Under 0.1 Seconds | Nopea">
-    <meta property="og:description"
-        content="Build high-performance web applications that respond in under 0.1 seconds. Boost user engagement and revenue with our performance-focused development services.">
-    <meta property="og:image" content="https://nopea.it/og-image.jpg">
-    <meta property="og:site_name" content="Nopea">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nopea.it/">
-    <meta property="twitter:title" content="High-Performance Web Apps Under 0.1 Seconds | Nopea">
-    <meta property="twitter:description"
-        content="Build high-performance web applications that respond in under 0.1 seconds. Boost user engagement and revenue with our performance-focused development services.">
-    <meta property="twitter:image" content="https://nopea.it/og-image.jpg">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://nopea.it/">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
-    <!-- Structured Data - Organization -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Nopea",
-        "url": "https://nopea.it/",
-        "logo": "https://nopea.it/logo.png",
-        "description": "High-performance web application development company specializing in sub-0.1 second response times",
-        "founder": {
-            "@type": "Person",
-            "name": "Roy Salazar"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-XXX-XXX-XXXX",
-            "contactType": "customer service",
-            "email": "hello@nopea.it.com"
-        },
-        "sameAs": [
-            "https://linkedin.com/company/nopea-development",
-            "https://twitter.com/nopeadev"
-        ]
-    }
-    </script>
-
-    <!-- Structured Data - Service -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "High-Performance Web Application Development",
-        "description": "Custom web application development with guaranteed response times under 0.1 seconds",
-        "provider": {
-            "@type": "Organization",
-            "name": "Nopea"
-        },
-        "serviceType": "Web Development",
-        "offers": {
-            "@type": "Offer",
-            "description": "Fixed-price web development with 30-day money-back guarantee"
-        }
-    }
-    </script>
 
     <style>
         *,
@@ -232,31 +158,9 @@
 
         /* styles */
 
-        .construction-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: #ffd603;
-            z-index: 9999;
-            height: 2rem;
-        }
-
-        .construction-banner p {
-            color: #0e0436;
-            font-weight: 500;
-            margin: auto;
-            text-align: center;
-            max-width: 1400px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         .nav {
             position: fixed;
-            top: 2rem;
+            top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
@@ -415,7 +319,7 @@
             }
         }
 
-        .card__text {
+        .text--margin-top {
             margin-top: 1.5rem;
         }
 
@@ -452,6 +356,10 @@
             flex: 1;
         }
 
+        .core-value .card {
+            flex: 1;
+        }
+
         .core-value__title {
             font-size: 2.5rem;
             font-weight: 550;
@@ -470,44 +378,6 @@
             margin-bottom: 1rem;
         }
 
-        .big-tech-icons-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 0.75rem;
-            justify-content: flex-end;
-            margin-left: auto;
-            padding: 1rem;
-            margin-bottom: auto;
-        }
-
-        .icon-google {
-            display: flex;
-            height: 2rem;
-            margin-right: 0.5rem;
-        }
-
-        .icon-meta {
-            display: flex;
-            height: 1.75rem;
-            margin-right: 0.5rem;
-        }
-
-        .icon-uber {
-            display: flex;
-            height: 1.75rem;
-            margin-right: 0.5rem;
-        }
-
-        .value__img {
-            display: flex;
-            flex: 1;
-            width: 100%;
-            background-size: cover;
-            background-position: top;
-            background-repeat: no-repeat;
-            background-image: url('https://images.pexels.com/photos/443399/pexels-photo-443399.jpeg?_gl=1*11okwt5*_ga*NTEzNDQyNzAzLjE3NTQ2MzU3MzA.*_ga_8JE65Q40S6*czE3NTQ4OTc2MjgkbzUkZzEkdDE3NTQ4OTc3NDkkajQ0JGwwJGgw');
-        }
 
         .method {
             flex: 1;
@@ -652,10 +522,6 @@
                 flex: 1;
             }
 
-            .big-tech-icons-container {
-                margin-bottom: 2rem;
-            }
-
             .core-method {
                 flex-direction: row;
                 gap: 2rem;
@@ -675,9 +541,6 @@
 </head>
 
 <body>
-    <div class="construction-banner">
-        <p>🛠️ Page under construction</p>
-    </div>
     <nav id="navbar" class="nav padding-inline">
         <button id="nav-icon" class="nav-icon">
             <svg viewBox="0 0 573 574" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -703,10 +566,10 @@
     </nav>
     <main class="hero padding-inline">
         <h1 class="hero__title">
-            Apps that respond in under <span class="fast">0.1 seconds</span>
+            Web apps that respond in under <span class="fast">0.1 seconds</span>
         </h1>
         <h3 class="hero__text">
-            Leverage our high-performance apps to keep your users highly engaged.
+            Leverage our high-performance web apps to keep your users highly engaged.
         </h3>
         <a href="https://calendly.com/roy-nopea/30min" target="_blank" class="btn">
             <img class="avatar avatar--small" src="./roy-salazar.jpg" alt="Roy Salazar">
@@ -736,7 +599,7 @@
                 </svg>
             </div>
             <h2 class="card__title">We guarantee business results.</h2>
-            <p class="card__text">
+            <p class="text--margin-top">
                 We work with you to define your desired business outcomes, and along the way, we <strong>benchmark
                     progress against the key metrics you want to improve.</strong>
             </p>
@@ -750,7 +613,7 @@
                 </svg>
             </div>
             <h2 class="card__title">No budget overruns!</h2>
-            <p class="card__text">
+            <p class="text--margin-top">
                 We don’t charge for hours or deliverables. You pay a <strong>fixed price</strong> for results, with
                 any unexpected but pre-agreed extra work or support covered at no additional cost.
             </p>
@@ -764,7 +627,7 @@
                 </svg>
             </div>
             <h2 class="card__title">No risks.</h2>
-            <p class="card__text">
+            <p class="text--margin-top">
                 We charge 100% upfront for the project. However, if for any reason you're not satisfied with how things
                 are going during the first <strong>30 days</strong>, no problem—we can call it off, and you’ll
                 receive a <strong>full refund.</strong>
@@ -798,83 +661,15 @@
                 revenue.</h3>
             <h4 class="core-value__sub-header padding-inline">Meta (formerly Facebook) research</h4>
             <div class="card padding-inline">
-                <div class="big-tech-icons-container">
-                    <div class="icon-google">
-                        <svg viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_557_797)">
-                                <path
-                                    d="M34.5821 17.8277C34.5821 16.3937 34.4658 15.3473 34.214 14.2622H17.8398V20.7343H27.4511C27.2574 22.3427 26.211 24.7649 23.8856 26.3925L23.853 26.6092L29.0302 30.6199L29.3889 30.6557C32.683 27.6134 34.5821 23.1371 34.5821 17.8277Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M17.8414 34.8798C22.5501 34.8798 26.5031 33.3295 29.3905 30.6555L23.8872 26.3923C22.4145 27.4193 20.4379 28.1363 17.8414 28.1363C13.2295 28.1363 9.31529 25.0941 7.91996 20.8892L7.71544 20.9065L2.33212 25.0727L2.26172 25.2684C5.12958 30.9654 11.0204 34.8798 17.8414 34.8798Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M7.9208 20.8891C7.55263 19.8039 7.33956 18.6412 7.33956 17.4398C7.33956 16.2384 7.55263 15.0757 7.90143 13.9906L7.89168 13.7595L2.44089 9.52637L2.26255 9.6112C1.08057 11.9753 0.402344 14.6301 0.402344 17.4398C0.402344 20.2496 1.08057 22.9042 2.26255 25.2684L7.9208 20.8891Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M17.8414 6.74338C21.1162 6.74338 23.3252 8.15794 24.5848 9.34006L29.5067 4.53437C26.4839 1.72462 22.5501 0 17.8414 0C11.0204 0 5.12958 3.91426 2.26172 9.61124L7.90059 13.9907C9.31529 9.78571 13.2295 6.74338 17.8414 6.74338Z"
-                                    fill="currentColor" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_557_797">
-                                    <rect width="35" height="35" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div class="icon-meta">
-                        <svg viewBox="0 0 48 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_557_802)">
-                                <path
-                                    d="M5.07658 20.4503C5.07658 22.2356 5.47048 23.6006 5.98532 24.4283C6.25969 24.8996 6.65477 25.2903 7.13045 25.5609C7.60613 25.8314 8.14544 25.9721 8.69359 25.9686C10.0175 25.9686 11.2286 25.644 13.5626 22.4369C15.4324 19.8676 17.6356 16.2693 19.1197 13.9971L21.6302 10.1667C23.3741 7.50654 25.3894 4.54937 27.7071 2.53843C29.5948 0.908901 31.633 0 33.6842 0C37.128 0 40.4083 1.98173 42.9188 5.69848C45.6663 9.76906 47.0049 14.8962 47.0049 20.1873C47.0049 23.3328 46.3805 25.644 45.3182 27.4699C44.2934 29.2358 42.2863 31 38.921 31V25.9686C41.8025 25.9686 42.5167 23.3393 42.5167 20.3302C42.5167 16.0421 41.5099 11.2834 39.292 7.88309C37.718 5.47126 35.6782 3.99754 33.4341 3.99754C31.007 3.99754 29.0538 5.81534 26.8588 9.05654C25.6918 10.7786 24.4937 12.8772 23.1486 15.2452L21.6678 17.842C18.6931 23.0796 17.9396 24.2725 16.4523 26.2413C13.8503 29.7016 11.6241 31 8.69359 31C5.21714 31 3.01881 29.5052 1.6655 27.2524C0.545903 25.4168 0 23.0082 0 20.2636L5.07658 20.4503Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M4.00391 6.05393C6.33135 2.49136 9.69013 0 13.5425 0C15.7735 0 17.9915 0.649215 20.3075 2.53356C22.8408 4.5867 25.5377 7.96749 28.9095 13.5394L30.1174 15.539C33.0332 20.3626 34.6938 22.8426 35.663 24.0145C36.9118 25.5174 37.7878 25.9621 38.9221 25.9621C41.8036 25.9621 42.5179 23.3328 42.5179 20.3237L46.9963 20.1841C46.9963 23.3295 46.3719 25.6407 45.3095 27.4667C44.2945 29.2358 42.2874 31 38.9221 31C36.83 31 34.9766 30.5488 32.927 28.6287C31.3514 27.155 29.5094 24.5371 28.0923 22.1837L23.8771 15.1916C21.7621 11.6826 19.822 9.06628 18.6992 7.88796C17.4897 6.60738 15.9386 5.06874 13.4608 5.06874C11.4553 5.06874 9.75224 6.46618 8.327 8.60372L4.00391 6.05393Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M13.4596 5.06874C11.4542 5.06874 9.75108 6.46618 8.32585 8.60372C6.31058 11.6242 5.07658 16.1232 5.07658 20.4503C5.07658 22.2356 5.47048 23.6006 5.98532 24.4283L1.65732 27.2524C0.545904 25.4168 0 23.0082 0 20.2636C0 15.2728 1.37947 10.0709 4.00275 6.05393C6.33019 2.49136 9.68897 0 13.5413 0L13.4596 5.06874Z"
-                                    fill="currentColor" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_557_802">
-                                    <rect width="47" height="31" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div class="icon-uber">
-                        <svg viewBox="0 0 55 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_557_806)">
-                                <path
-                                    d="M7.42566 15.6242C10.0254 15.6242 12.036 13.7278 12.036 10.9227V0H14.8508V17.6918H12.0583V16.0483C11.4186 16.6737 10.6503 17.1693 9.80039 17.5049C8.95052 17.8405 8.03699 18.0089 7.1157 18C3.09458 18 0.0117188 15.245 0.0117188 11.0729V0.0105378H2.81534V10.9227C2.81534 13.7779 4.79797 15.6242 7.42566 15.6242Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M16.9375 0H19.6434V6.44776C20.2747 5.83697 21.0295 5.35185 21.8631 5.02113C22.6968 4.69042 23.5923 4.52082 24.4967 4.52239C25.4347 4.52239 26.3635 4.69667 27.2302 5.03526C28.0968 5.37385 28.8843 5.87013 29.5476 6.49576C30.2109 7.12139 30.737 7.86412 31.096 8.68155C31.455 9.49898 31.6397 10.3751 31.6397 11.2599C31.6397 12.1447 31.455 13.0208 31.096 13.8382C30.737 14.6556 30.2109 15.3984 29.5476 16.024C28.8843 16.6496 28.0968 17.1459 27.2302 17.4845C26.3635 17.8231 25.4347 17.9974 24.4967 17.9974C23.5889 17.9997 22.6899 17.831 21.8522 17.5013C21.0145 17.1716 20.255 16.6875 19.6182 16.0773V17.6918H16.9375V0ZM24.3096 15.7507C25.2497 15.7564 26.1706 15.4987 26.9553 15.0102C27.7399 14.5217 28.3532 13.8244 28.7172 13.0067C29.0812 12.1891 29.1796 11.2879 28.9999 10.4174C28.8202 9.54694 28.3706 8.74639 27.7079 8.11729C27.0452 7.48818 26.1994 7.05884 25.2778 6.88371C24.3561 6.70858 23.4 6.79554 22.5308 7.13357C21.6616 7.47161 20.9183 8.04548 20.3953 8.78244C19.8723 9.51939 19.5931 10.3862 19.5931 11.2731C19.5902 11.8594 19.7099 12.4405 19.9455 12.9831C20.1812 13.5257 20.528 14.0192 20.9661 14.4351C21.4042 14.8511 21.9251 15.1814 22.4988 15.4072C23.0726 15.6329 23.6879 15.7496 24.3096 15.7507Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M39.7885 4.55127C43.7286 4.55127 46.6244 7.40904 46.6244 11.2519V12.0868H35.4881C35.6548 13.1073 36.203 14.0379 37.0337 14.7103C37.8644 15.3827 38.9228 15.7527 40.0175 15.7532C40.7887 15.7662 41.5516 15.6 42.2387 15.2693C42.9258 14.9386 43.5161 14.4535 43.9576 13.8568L45.9123 15.2212C45.2342 16.0915 44.3448 16.7958 43.3187 17.2751C42.2926 17.7545 41.1596 17.9949 40.0147 17.9762C35.9154 17.9762 32.7543 15.0947 32.7543 11.2519C32.7443 10.3749 32.919 9.50473 33.2681 8.69183C33.6172 7.87893 34.1338 7.13944 34.7881 6.51622C35.4423 5.89299 36.2212 5.3984 37.0795 5.06111C37.9379 4.72382 38.8586 4.55052 39.7885 4.55127ZM35.544 10.0535H43.8794C43.4243 8.08069 41.7348 6.76637 39.7243 6.76637C37.7137 6.76637 36.0243 8.08332 35.5356 10.0535"
-                                    fill="currentColor" />
-                                <path
-                                    d="M53.873 7.0797C52.1054 7.0797 50.8181 8.37031 50.8181 10.3668V17.6916H48.1094V4.78558H50.7901V6.36592C51.1237 5.8327 51.6034 5.39405 52.1788 5.09604C52.7542 4.79804 53.404 4.65168 54.0601 4.67233H54.9983V7.04283L53.873 7.0797Z"
-                                    fill="currentColor" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_557_806">
-                                    <rect width="55" height="18" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </div>
-                </div>
-                <p class="card__text">
+                <p>
                     Google, Meta, Uber, and others big tech companies invest millions of dollars in improving software
                     performance, as <strong>data consistently shows that faster apps leads to greater user engagement
                         and
                         spending</strong>.
                 </p>
-                <p class="card__text">Leverage our high-performance apps to keep your users highly engaged.</p>
+                <p class="text--margin-top">Leverage our high-performance web apps to keep your users highly engaged.
+                </p>
             </div>
-            <div class="value__img"></div>
         </section>
 
         <section class="method">
@@ -1033,7 +828,7 @@
     <section class="ready">
         <h2 class="ready__title">Are you ready?</h2>
         <div class="ready__text-container">
-            <p class="card__text">
+            <p class="text--margin-top">
                 Because our focus is on business outcomes, we recognize that building custom software is sometimes more
                 than
                 what's necessary. In some cases, a simpler, more affordable solution—like a WordPress site from a
@@ -1041,7 +836,7 @@
                 or software built by a team based in a developing country—may be all you need and require far less
                 investment.
             </p>
-            <p class="card__text">
+            <p class="text--margin-top">
                 However, if you’ve already explored your options and still believe that what you need is a refined,
                 carefully engineered custom solution, then you’re in the right place.
             </p>
