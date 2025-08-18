@@ -49,7 +49,6 @@
                 "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             font-size: 1rem;
-            margin-bottom: 10rem;
             max-width: 1400px;
             margin-inline: auto;
             letter-spacing: -0.01em;
@@ -266,6 +265,11 @@
             font-size: 1.25rem;
         }
 
+        .icon__btn {
+            display: flex;
+            height: 1.5rem;
+        }
+
         .guarantee {
             display: flex;
             flex-direction: column;
@@ -394,6 +398,11 @@
             border-bottom: 1px solid #cbcbcb;
         }
 
+        .step--first {
+            border-top: 1px solid #cbcbcb;
+            margin-top: 2rem;
+        }
+
         .step__header {
             display: flex;
             justify-content: space-between;
@@ -485,6 +494,7 @@
 
         .intro-members-container {
             flex: 1;
+            padding-block: 20px;
         }
 
         .more-info__steps {
@@ -506,6 +516,24 @@
         .more-questions__text {
             font-size: 1.25rem;
             margin-top: 1rem;
+        }
+
+        .footer {
+            margin-top: 8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo p {
+            font-size: .85rem;
+            font-weight: 500;
         }
 
         @media (min-width: 975px) {
@@ -530,11 +558,6 @@
             .steps-container {
                 flex-direction: row;
                 gap: 2rem;
-            }
-
-            .step--first {
-                border-top: 1px solid #cbcbcb;
-                margin-top: 2rem;
             }
         }
     </style>
@@ -864,7 +887,7 @@
         <h2 class="steps__title padding-inline">More information</h2>
         <div class="steps-container">
             <div class="intro-members-container">
-                <div class="step padding-inline step--first no-click">
+                <div class="padding-inline no-click">
                     <div class="step__header">
                         <div class="step__header-content">
                             <img class="avatar" src="./roy-salazar.jpg" alt="Roy Salazar">
@@ -877,37 +900,11 @@
                         specializing in building high-performance, reliable applications with low maintenance costs.
                     </p>
                 </div>
-                <div class="step padding-inline no-click">
-                    <div class="step__header">
-                        <div class="step__header-content">
-                            <img class="avatar" src="./diego-calle.jpg" alt="Diego Calle">
-                            <h3 class="step__title">Hi, I am Diego</h3>
-                        </div>
-                    </div>
-                    <p class="step__text show">
-                        Coming soon.
-                    </p>
-                </div>
             </div>
             <div class="more-info__steps">
                 <div class="step padding-inline step--first">
                     <div class="step__header">
                         <h3 class="step__title">Do you do UI/UX design as well?</h3>
-                        <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-                            </svg>
-                        </span>
-                    </div>
-                    <p class="step__text">
-                        Coming soon.
-                    </p>
-                </div>
-                <div class="step padding-inline">
-                    <div class="step__header">
-                        <h3 class="step__title">Do you also provide hosting?</h3>
                         <span class="arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                                 stroke="currentColor" class="size-6">
@@ -942,6 +939,27 @@
             </div>
         </div>
     </section>
+    <footer class="footer padding-inline">
+        <div class="footer-logo">
+            <svg viewBox="0 0 573 574" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M389.5 37V172H536.5V537H37V37H389.5Z" fill="none" />
+                <path
+                    d="M353 172C377.333 172 401.667 172 426 172C426 170.959 426 169.754 426 168.616C426 136.457 426 104.205 426 72.043C426 60.3533 426 48.5679 426 37V0.5H389.5C272 0.5 154.5 0.5 37 0.5H0.5V37C0.5 203.667 0.5 370.333 0.5 537V573.5H37C203.5 573.5 370 573.5 536.5 573.5H573V537C573 415.476 573 293.607 573 172V135.5H536.5C520.817 135.5 505.133 135.5 489.45 135.5C457.172 135.5 424.894 135.5 392.616 135.5C391.577 135.5 390.539 135.5 389.5 135.5C389.5 159.833 389.5 184.167 389.5 208.5C390.539 208.5 391.577 208.5 392.616 208.5C424.894 208.5 457.172 208.5 489.45 208.5C505.133 208.5 520.817 208.5 536.5 208.5L500 172C500 293.607 500 415.476 500 537L536.5 500.5C370 500.5 203.5 500.5 37 500.5L73.5 537C73.5 370.333 73.5 203.667 73.5 37L37 73.5C154.5 73.5 272 73.5 389.5 73.5L353 37C353 48.5679 353 60.3533 353 72.043C353 104.205 353 136.457 353 168.616C353 169.754 353 170.959 353 172ZM426 172H353V208.5H389.5V135.5L426 172Z"
+                    fill="currentColor" />
+                <path
+                    d="M144.75 435V137.5H224L364.5 337.75H352.75V137.5H427.5V435H348.25L207.75 234.75H219.5V435H144.75Z"
+                    fill="currentColor" />
+            </svg>
+            <p>Nopea</p>
+        </div>
+        <a class="icon__btn" href="https://www.linkedin.com/in/roy-salazar/" target="_blank">
+            <svg viewBox="0 0 534 534" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M490.667 0.0478348H45.6667C39.931 -0.220832 34.1983 0.644176 28.7973 2.59384C23.3963 4.54351 18.433 7.53916 14.191 11.4092C9.94934 15.2795 6.51234 19.9485 4.07734 25.1485C1.64234 30.3488 0.256667 35.9782 0 41.7145V487.715C0.336 499.719 5.25533 511.142 13.7477 519.632C22.24 528.125 33.6613 533.045 45.6667 533.382H490.667C502.337 532.862 513.34 527.789 521.317 519.252C529.293 510.715 533.607 499.395 533.333 487.715V41.7145C533.43 36.1312 532.383 30.5875 530.26 25.4228C528.137 20.2585 524.98 15.5822 520.983 11.6805C516.99 7.77917 512.24 4.73518 507.027 2.73484C501.813 0.73451 496.247 -0.179832 490.667 0.0478348ZM166.667 444.715H89V207.049H166.667V444.715ZM129.667 171.048C124.247 171.237 118.847 170.303 113.805 168.305C108.764 166.307 104.19 163.288 100.371 159.438C96.552 155.587 93.5703 150.989 91.6137 145.931C89.6567 140.873 88.767 135.466 89 130.048C88.7603 124.571 89.668 119.105 91.665 114C93.662 108.895 96.704 104.264 100.596 100.403C104.488 96.5425 109.143 93.5382 114.264 91.5828C119.386 89.6272 124.859 88.7638 130.333 89.0478C135.753 88.8592 141.153 89.7928 146.195 91.7908C151.236 93.7888 155.81 96.8078 159.629 100.658C163.448 104.508 166.43 109.107 168.386 114.164C170.343 119.222 171.233 124.63 171 130.048C171.24 135.524 170.332 140.991 168.335 146.096C166.338 151.201 163.296 155.832 159.404 159.693C155.512 163.553 150.857 166.557 145.736 168.513C140.614 170.468 135.141 171.332 129.667 171.048ZM444.667 444.715H366.667V314.715C366.667 283.715 355.667 262.382 328 262.382C319.407 262.455 311.043 265.185 304.063 270.199C297.08 275.212 291.82 282.262 289 290.382C286.833 296.469 285.927 302.932 286.333 309.382V444.715H209.667V207.049H286.333V240.382C293.15 227.859 303.293 217.465 315.647 210.345C328 203.229 342.08 199.665 356.333 200.048C406.667 200.048 444.667 233.382 444.667 304.382V444.715Z"
+                    fill="currentColor" />
+            </svg>
+        </a>
+    </footer>
     <script>
         document.querySelectorAll('.step__header').forEach(header => {
             header.addEventListener('click', () => {
